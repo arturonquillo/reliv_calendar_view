@@ -65,10 +65,10 @@ extension DateTimeExtensions on DateTime {
     //    difference = (weekdays - (start.index + 1))%7
     //
     final startDay =
-        DateTime(year, month, day - (weekday - start.index - 1) % 7);
+        DateTime(year, month, day - (weekday - start.index - 1) % 3);
     // Generate weekdays with weekends or without weekends
     final days = List.generate(
-      7,
+      3,
       (index) => DateTime(startDay.year, startDay.month, startDay.day + index),
     )
         .where(
