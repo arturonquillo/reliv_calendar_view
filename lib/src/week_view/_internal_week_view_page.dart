@@ -88,7 +88,7 @@ class InternalWeekViewPage<T extends Object?> extends StatefulWidget {
 
   /// Width of week title.
   final double weekTitleWidth;
-
+  
   /// Called when user taps on event tile.
   final CellTapCallback<T>? onTileTap;
 
@@ -507,8 +507,9 @@ class _InternalWeekViewPageState<T extends Object?>
     final output = <DateTime>[];
 
     final weekDays = widget.weekDays.toList();
-
+    print(widget.dates);
     for (final date in widget.dates) {
+      //  output.add(date);
       if (weekDays.any((weekDay) => weekDay.index + 1 == date.weekday)) {
         output.add(date);
       }

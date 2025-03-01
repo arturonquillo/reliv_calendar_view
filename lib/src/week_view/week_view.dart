@@ -520,7 +520,7 @@ class WeekViewState<T extends Object?> extends State<WeekView<T>> {
                       onPageChanged: _onPageChange,
                       itemBuilder: (_, index) {
                         final dates = DateTime(_minDate.year, _minDate.month,
-                                _minDate.day + (index * DateTime.daysPerWeek))
+                                _minDate.day + (index * 3))
                             .datesOfWeek(
                           start: widget.startDay,
                           showWeekEnds: widget.showWeekends,
@@ -631,7 +631,7 @@ class WeekViewState<T extends Object?> extends State<WeekView<T>> {
         "Make sure you are providing weekdays in initialization of "
         "WeekView. or showWeekends is true if you are providing only "
         "saturday or sunday in weekDays.");
-    _totalDaysInWeek = _weekDays.length;
+    _totalDaysInWeek = 3;
   }
 
   void _updateViewDimensions() {
